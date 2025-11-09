@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: anaesthetik-ghost
+    env: node
+    plan: free
+    buildCommand: |
+      npm install
+    startCommand: |
+      npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: PORT
+        value: 3000
+      - key: NODE_ENV
+        value: development
+      - key: url
+        value: https://anaesthetik.onrender.com
+    autoDeploy: true
